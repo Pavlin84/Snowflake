@@ -1,3 +1,3 @@
-import streamlimit
+import streamlit
 
-streamlimit.title('Snowflake test')
+streamlit.title('Snowflake test')
