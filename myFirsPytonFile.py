@@ -1,5 +1,8 @@
 import streamlit
 
 streamlit.title('Snowflake Badge')
-streamlit.header('Bade 2')
-streamlit.text('lesson 3 beginning')
+
+streamlit.header('Breakfast Menu')
+streamlit.text('Omega 3 & Blueberry Oatmeal')
+streamlit.text('Kale, Spinach & Rocket Smoothie')
+streamlit.text('Hard-Boiled Free-Range Egg')
