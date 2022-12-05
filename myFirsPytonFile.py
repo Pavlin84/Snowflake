@@ -17,7 +17,7 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 
 
 
-# Let's put a pick list here so they can pick the fruit they want to include 
+# Let's put a pick list here so they can pick the fruit they want to include
 fruit_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Pear', 'Peach'])
 
 fruit_to_show = my_fruit_list.loc[fruit_selected]
@@ -26,7 +26,7 @@ fruit_to_show = my_fruit_list.loc[fruit_selected]
 streamlit.dataframe(fruit_to_show)
 streamlit.dataframe(my_fruit_list)
 
-
+streamlit.header("Fruityvice Fruit Advice!")
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response)
+streamlit.text(fruityvice_response.json())
 
