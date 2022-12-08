@@ -56,9 +56,10 @@ except URLError as e:
 
 if streamlit.button("Get fruit load list"):
      my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+     bl = false
      data_rows = get_fruit_list()
 
-if not data_rows:
+if bl:
     streamlit.error("Please insert the button")
 
 else:
