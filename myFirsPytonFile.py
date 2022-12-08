@@ -1,6 +1,8 @@
 import streamlit
 import pandas
 import requests
+import snowflake.connector
+import urllib.error from URLError
 
 streamlit.title('Snowflake Badge')
 
@@ -35,7 +37,7 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruit_normalaized = pandas.json_normalize(fruityvice_response.json())
 streamlit.dataframe(fruit_normalaized)
 
-import snowflake.connector
+streamlit.stop()
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
