@@ -31,7 +31,7 @@ streamlit.dataframe(my_fruit_list)
 def get_fruit_data(fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
   fruit_normalaized = pandas.json_normalize(fruityvice_response.json())
-return fruit_normalaized
+  return fruit_normalaized
 
 
 fruit_choice = streamlit.text_input("Whats fruit would you like information about", "kiwi")
@@ -43,8 +43,7 @@ try:
   if not fruit_choice:
     streamlit.error("Please select a fruit to get info")
   else:
-    x = get_fruit_data(fruit_choice)
-    streamlit.dataframe(x)
+    streamlit.dataframe(get_fruit_data(fruit_choice))
 
 except URLError as e:
     streamlit.error()
