@@ -70,7 +70,7 @@ if streamlit.button("Get fruit load list"):
      data_rows = get_fruit_list()
      my_cnx.close()
      streamlit.dataframe(data_rows)
-
+#https://pavlin84-snowflake-myfirspytonfile-x5zgv7.streamlit.app/
 
 
 
